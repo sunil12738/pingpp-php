@@ -204,7 +204,16 @@ class ApiRequestor
         );
         return array($rbody, $rcode, $myApiKey);
     }
-
+    
+    /**
+     * @param mixed $rbody response body in json format
+     * @param integer $rcode response code
+     * 
+     * @throws API error in case of exception
+     * @throws error if $rcode is not in proper limits
+     * 
+     * @return object $resp returns the object
+     */
     private function _interpretResponse($rbody, $rcode)
     {
         try {
